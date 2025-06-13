@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Weather App</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="typing-container">
+    <h3 class="typing-text">Get Weather Conditions</h3>
+    </div>
+    <div class="gradient-border-element">
+    <form action="/weather" method="GET">
+        <input type="text" name="city" placeholder="Enter city name">
+        <button type="submit">Submit</button>
+    </form>
+    </div>
+    <script>
+        const backgrounds = ['rainy', 'sunny', 'night'];
+        let idx = 0;
+        function cycleBackground() {
+            document.body.classList.remove(...backgrounds);
+            document.body.classList.add(backgrounds[idx]);
+            idx = (idx + 1) % backgrounds.length;
+        }
+        cycleBackground();
+        setInterval(cycleBackground, 4000); // Change every 4 seconds
+    </script>
+</body>
+</html>
