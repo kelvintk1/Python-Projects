@@ -5,6 +5,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     min-height: 100vh;
     transition: background 1s;
 }
@@ -21,56 +22,72 @@ body.night {
     background: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=1708&auto=format&fit=crop&q=60') center center/cover no-repeat fixed;
 }
 
-form, .container {
-    background-image: blur(500px);
-    width: 100%;
+.gradient-border-element {
+    position: relative;
+    width: 90%;
     max-width: 500px;
     min-width: 0;
-    padding: 2.5em 2em;
-    margin-top: 2.5em;
+    height: auto;
+    min-height: 150px;
+    padding: 6px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 16px;
+    background: linear-gradient(45deg, #ff416c, #ff4b2b, #ff9100, #ffdd00, #2de2e6, #00b1d2);
+    background-size: 300% 300%;
+    animation: gradient-shift 3s ease infinite;
+    margin: 1em 0;
+}
+
+.gradient-border-element::before {
+    content: '';
+    position: absolute;
+    inset: 6px;
+    background: white;
     border-radius: 12px;
-    box-sizing: border-box;
+    z-index: 0;
+}
+
+.gradient-border-element form {
+    position: relative;
+    z-index: 1;
+    font-size: 22px;
+    font-weight: 600;
+    color: #333;
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1.5em;
 }
 
 input[type="text"] {
-    padding: 1em;
-    border: 1px solid #ccc;
-    border-radius: 8px;
+    padding: 1.2em;
+    border: 2px solid #ccc;
+    border-radius: 12px;
     width: 100%;
-    max-width: 300px;
     box-sizing: border-box;
     font-size: 1em;
+    margin: 0.5em 0;
 }
 
 button {
-    padding: 1em 1.5em;
+    padding: 1.2em 1.5em;
     background: #3498db;
     color: #fff;
     border: none;
-    border-radius: 8px;
+    border-radius: 12px;
     cursor: pointer;
-    margin-top: 20px;
+    margin-top: 1em;
     font-size: 1em;
     font-weight: bold;
     width: 100%;
-    max-width: 300px;
+    transition: transform 0.2s;
 }
 
-a {
-    display: inline-block;
-    margin-top: 1em;
-    color: white;
-    font-weight: bold;
-    text-decoration: none;
-    background-color: black;
-    height: 30px;
-    width: 150px;
-    padding: 5px;
-    border-radius: 5px;
-}
-
-a:hover {
-    opacity: 0.7;
+button:active {
+    transform: scale(0.98);
 }
 
 .typing-container {
@@ -79,16 +96,18 @@ a:hover {
     justify-content: center;
     height: 100%;
     margin: 1em 0;
+    width: 90%;
+    text-align: center;
 }
 
 .typing-text {
     color: white;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-    font-size: 2.5em;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
+    font-size: 2.8rem;
     font-weight: bold;
     overflow: hidden;
     white-space: nowrap;
-    border-right: 3px solid #3498db;
+    border-right: 4px solid #3498db;
     animation: typing 10s steps(10) infinite, blink 0.5s step-end infinite alternate;
     padding: 0 0.5em;
 }
@@ -103,46 +122,6 @@ a:hover {
     50% { border-color: transparent; }
 }
 
-.gradient-border-element {
-    position: relative;
-    width: 100%;
-    max-width: 400px;
-    min-width: 0;
-    height: auto;
-    min-height: 120px;
-    padding: 4px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 12px;
-    background: linear-gradient(45deg, #ff416c, #ff4b2b, #ff9100, #ffdd00, #2de2e6, #00b1d2);
-    background-size: 300% 300%;
-    animation: gradient-shift 3s ease infinite;
-    margin-top: 1em;
-}
-
-.gradient-border-element::before {
-    content: '';
-    position: absolute;
-    inset: 4px;
-    background: white;
-    border-radius: 8px;
-    z-index: 0;
-}
-
-.gradient-border-element form {
-    position: relative;
-    z-index: 1;
-    font-size: 18px;
-    font-weight: 600;
-    color: #333;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 1em;
-}
-
 @keyframes gradient-shift {
     0% {
         background-position: 0% 50%;
@@ -155,45 +134,50 @@ a:hover {
     }
 }
 
-/* Responsive styles */
+/* Mobile-specific styles */
 @media (max-width: 600px) {
     body {
-        padding: 0 1em;
+        padding: 1em;
+        justify-content: flex-start;
     }
     
     .typing-text {
-        font-size: 2em;
-        margin: 0.5em 0;
+        font-size: 2.5rem;
+        margin: 0.8em 0;
     }
     
     .gradient-border-element {
-        max-width: 100%;
-        padding: 3px;
+        width: 95%;
+        padding: 8px;
+        min-height: 180px;
+        border-radius: 20px;
+    }
+    
+    .gradient-border-element::before {
+        inset: 8px;
+        border-radius: 14px;
     }
     
     .gradient-border-element form {
-        padding: 1.5em;
+        padding: 1.8em;
+        font-size: 24px;
     }
     
     input[type="text"] {
-        padding: 1.2em;
+        padding: 1.5em;
         font-size: 1.1em;
-        max-width: 100%;
-        border-radius: 10px;
+        border-radius: 14px;
+        border-width: 3px;
     }
     
     button {
-        padding: 1.2em;
-        font-size: 1.1em;
-        max-width: 100%;
-        border-radius: 10px;
+        padding: 1.5em;
+        font-size: 1.2em;
+        border-radius: 14px;
         margin-top: 1.5em;
     }
     
-    a {
-        width: 100%;
-        padding: 0.8em 0;
-        text-align: center;
+    input[type="text"]::placeholder {
         font-size: 1.1em;
     }
 }
@@ -201,10 +185,20 @@ a:hover {
 /* Dark mode styles */
 @media (prefers-color-scheme: dark) {
     .gradient-border-element::before {
-        background: rgba(0, 0, 0, 0.829);
+        background: rgba(0, 0, 0, 0.85);
     }
     
     .gradient-border-element form {
         color: #fff;
+    }
+    
+    input[type="text"] {
+        background-color: rgba(255, 255, 255, 0.1);
+        color: white;
+        border-color: #555;
+    }
+    
+    input[type="text"]::placeholder {
+        color: #ccc;
     }
 }
