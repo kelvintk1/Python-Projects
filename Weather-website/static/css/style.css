@@ -33,7 +33,9 @@ input[type="text"] {
     padding: 0.5em;
     border: 1px solid #ccc;
     border-radius: 4px;
-    width: 200px;
+    width: 100%;
+    max-width: 300px;
+    box-sizing: border-box;
 }
 button {
     padding: 0.5em 1em;
@@ -89,8 +91,11 @@ a:hover {
     
 .gradient-border-element {
   position: relative;
-  width: 350px;
-  height: 150px;
+  width: 100%;
+  max-width: 400px;
+  min-width: 0;
+  height: auto;
+  min-height: 120px;
   padding: 4px;
   display: flex;
   justify-content: center;
@@ -127,6 +132,34 @@ a:hover {
   }
   100% {
     background-position: 0% 50%;
+  }
+}
+
+/* Responsive styles */
+@media (max-width: 600px) {
+  body {
+    padding: 0 0.5em;
+  }
+  .container, form {
+    padding: 1em;
+    margin-top: 1em;
+  }
+  .gradient-border-element {
+    max-width: 98vw;
+    min-width: 0;
+    padding: 2px;
+  }
+  .typing-text {
+    font-size: 20px;
+  }
+  button, input[type="text"] {
+    font-size: 1em;
+  }
+  a {
+    width: 100%;
+    min-width: 0;
+    font-size: 1em;
+    padding: 8px 0;
   }
 }
 
