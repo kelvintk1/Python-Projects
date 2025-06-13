@@ -25,9 +25,13 @@ body.night {
 } */
 form, .container {
     background-image: blur(500px);
-    padding: 2em;
-    margin-top: 2em;
-    border-radius: 8px;
+    width: 100%;
+    max-width: 500px;
+    min-width: 0;
+    padding: 2.5em 2em;
+    margin-top: 2.5em;
+    border-radius: 12px;
+    box-sizing: border-box;
 }
 input[type="text"] {
     padding: 0.5em;
@@ -141,8 +145,12 @@ a:hover {
     padding: 0 0.5em;
   }
   .container, form {
-    padding: 1em;
+    width: 100%;
+    max-width: 98vw;
+    min-width: 0;
+    padding: 1.2em 0.5em;
     margin-top: 1em;
+    border-radius: 8px;
   }
   .gradient-border-element {
     max-width: 98vw;
