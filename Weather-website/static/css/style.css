@@ -145,12 +145,14 @@ a:hover {
     padding: 0 0.5em;
   }
   .container, form {
-    width: 100%;
-    max-width: 98vw;
+    width: 100vw;
+    max-width: 100vw;
     min-width: 0;
-    padding: 1.2em 0.5em;
-    margin-top: 1em;
-    border-radius: 8px;
+    padding: 2.2em 1em;
+    margin-top: 1.5em;
+    border-radius: 12px;
+    font-size: 1.15em;
+    box-sizing: border-box;
   }
   .gradient-border-element {
     max-width: 98vw;
