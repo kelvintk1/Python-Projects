@@ -176,10 +176,39 @@ a:hover {
 /* Dark mode styles */
 @media (prefers-color-scheme: dark) {
   .gradient-border-element::before {
-    background: #222;
+    background: rgba(0, 0, 0, 0.829);
   }
   
   .gradient-border-element form {
     color: #fff;
   }
 }
+
+/* media queries for form size when it is on a screen size mobile view */
+@media (max-width: 500px) {
+  .gradient-border-element {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    padding: 2px;
+  }
+  
+  .gradient-border-element form {
+    font-size: 16px;
+  }
+  
+  input[type="text"], button {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+  
+  a {
+    width: 100%;
+    min-width: 0;
+    font-size: 1em;
+    padding: 8px 0;
+  }
+  
+}
+
