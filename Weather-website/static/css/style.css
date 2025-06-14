@@ -108,9 +108,9 @@ button:active {
     display: flex;
     align-items: flex-start;
     justify-content: center;
-    width: 100vw;
-    margin-top: -40.5em;
-    margin-bottom: 30em;
+    width: 100%;
+    margin-top: -6em;
+    margin-bottom: 10em;
     text-align: center;
     min-height: 60px;
 }
@@ -118,7 +118,7 @@ button:active {
 .typing-text {
     color: white;
     text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
-    font-size: 3.7rem;
+    font-size: 3.4rem;
     font-weight: bold;
     overflow: hidden;
     white-space: nowrap;
