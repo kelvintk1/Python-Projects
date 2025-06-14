@@ -100,6 +100,9 @@ button {
     transition: transform 0.2s;
 }
 
+button:hover {
+  color: #ffd700;
+}
 button:active {
     transform: scale(0.98);
 }

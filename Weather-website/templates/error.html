@@ -6,22 +6,30 @@
     <title>Error</title>
     <link rel="stylesheet" href="/static/css/style.css">
 </head>
-<body>
+<body id="backgroundMedia">
     <div class="container">
         <h1>Error</h1>
         <p>{{ message }}</p>
         <a href="/">Back to search</a>
     </div>
     <script>
-        const backgrounds = ['rainy', 'sunny', 'night'];
-        let idx = 0;
-        function cycleBackground() {
-            document.body.classList.remove(...backgrounds);
-            document.body.classList.add(backgrounds[idx]);
-            idx = (idx + 1) % backgrounds.length;
-        }
-        cycleBackground();
-        setInterval(cycleBackground, 4000); // Change every 4 seconds
+    const weatherBackgrounds = [
+        'https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1500&q=80',
+        'https://images.unsplash.com/photo-1509635022432-0220ac12960b?auto=format&fit=crop&w=1500&q=80',
+        'https://images.unsplash.com/photo-1464037866556-6812c9d1c72e?auto=format&fit=crop&w=1500&q=80',
+        'https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=1500&q=80',
+        'https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=1500&q=80'
+    ];
+    let bgIdx = 0;
+    const bgDiv = document.getElementById('backgroundMedia');
+    function setWeatherBackground(idx) {
+        bgDiv.style.backgroundImage = `url('${weatherBackgrounds[idx]}')`;
+    }
+    setWeatherBackground(bgIdx);
+    setInterval(() => {
+        bgIdx = (bgIdx + 1) % weatherBackgrounds.length;
+        setWeatherBackground(bgIdx);
+    }, 5000);
     </script>
 </body>
 </html>
