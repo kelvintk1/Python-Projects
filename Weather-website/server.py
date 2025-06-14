@@ -27,4 +27,5 @@ def get_weather():
     )
 
 if __name__ == "__main__":
+    print(" * Running on http://localhost:8080 (Press CTRL+C to quit)")
     serve(app, host="0.0.0.0", port=8080)

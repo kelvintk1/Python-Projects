@@ -100,6 +100,61 @@ button:active {
     text-align: center;
 }
 
+/* Weather result container (weather.html) */
+.container {
+    background: rgba(30, 30, 40, 0.55);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(16px) saturate(180%);
+    -webkit-backdrop-filter: blur(16px) saturate(180%);
+    border-radius: 18px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    color: #f3f6fa;
+    padding: 2.5em 2em;
+    margin-top: 2.5em;
+    width: 100%;
+    max-width: 500px;
+    min-width: 0;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.container h1 {
+    font-size: 2.2em;
+    color: #fff;
+    margin-bottom: 1em;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.25);
+}
+
+.container p {
+    font-size: 1.3em;
+    color: #e0e6ed;
+    margin-bottom: 0.7em;
+}
+
+.container strong {
+    color: #ffd700;
+    font-size: 1.2em;
+}
+
+.container a {
+    color: #fff;
+    background: #3498db;
+    padding: 0.7em 1.5em;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.1em;
+    margin-top: 1.2em;
+    display: inline-block;
+    box-shadow: 0 2px 8px rgba(52,152,219,0.15);
+    transition: background 0.2s, color 0.2s;
+}
+
+.container a:hover {
+    background: #217dbb;
+    color: #ffd700;
+}
+
 .typing-text {
     color: white;
     text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
